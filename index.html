@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PROTOCOL_01</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #090a0d;
+            --panel: #11141a;
+            --line: #303744;
+            --text: #e8e9ec;
+            --muted: #9ba3af;
+            --accent: #c7d0dc;
+            --danger: #b56b6b
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at top, #171c25 0, #090a0d 55%);
+            color: var(--text);
+            font: 16px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            min-height: 100vh
+        }
+
+        .wrap {
+            width: min(760px, calc(100% - 32px));
+            margin: 7vh auto
+        }
+
+        .tag {
+            color: var(--muted);
+            font-size: .78rem;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        .panel {
+            border: 1px solid var(--line);
+            background: rgba(17, 20, 26, .92);
+            padding: clamp(22px, 5vw, 42px);
+            box-shadow: 0 20px 70px #0008
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.3rem);
+            line-height: 1.2;
+            letter-spacing: .06em;
+            margin: .55em 0
+        }
+
+        p {
+            margin: 1em 0
+        }
+
+        .rule {
+            border: 0;
+            border-top: 1px solid var(--line);
+            margin: 26px 0
+        }
+
+        label {
+            display: block;
+            margin: 20px 0 8px;
+            color: var(--muted)
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            background: #080a0e;
+            color: var(--text);
+            border: 1px solid #454d5b;
+            font: inherit
+        }
+
+        button,
+        .link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 12px 17px;
+            background: #d7dde5;
+            color: #101216;
+            border: 0;
+            text-decoration: none;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        button:hover,
+        .link:hover {
+            background: white
+        }
+
+        .note {
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        .error {
+            color: #e7a0a0;
+            min-height: 1.5em
+        }
+
+        .success {
+            color: #b9d6bd
+        }
+
+        .choices {
+            display: grid;
+            gap: 10px;
+            margin-top: 22px
+        }
+
+        .choices a {
+            display: block;
+            padding: 14px;
+            border: 1px solid var(--line);
+            color: var(--text);
+            text-decoration: none
+        }
+
+        .choices a:hover {
+            border-color: #c7d0dc;
+            background: #ffffff08
+        }
+
+        .small {
+            font-size: .82rem;
+            color: var(--muted)
+        }
+
+        .center {
+            text-align: center
+        }
+
+        .big {
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            letter-spacing: .08em;
+            line-height: 1.08
+        }
+
+        .key {
+            border: 1px dashed #697382;
+            padding: 16px;
+            overflow-wrap: anywhere;
+            background: #090b10
+        }
+
+        .hidden {
+            display: none
+        }
+
+        code {
+            color: #d8e0e9
+        }
+    </style>
+</head>
+
+<body>
+    <main class="wrap">
+        <section class="panel">
+            <div class="tag">INCOMING TRANSMISSION</div>
+            <h1>СОЕДИНЕНИЕ УСТАНОВЛЕНО</h1>
+            <p>Источник неизвестен.</p>
+            <p>Материал получен не полностью. Последовательность нарушена.</p>
+            <p>Не пытайся восстановить события. Сначала установи порядок.</p>
+            <hr class="rule">
+            <p class="tag">ПРИЛОЖЕНИЕ 01</p>
+            <p>Четыре символа. Один порядок. Никаких случайностей.</p>
+            <img src="images/dream.jpg" alt="Изображение 01" style="width: 100%; max-width: 650px; height: auto;">
+            <img src="images/age.jpg" alt="Изображение 02" style="width: 100%; max-width: 650px; height: auto;">
+            <img src="images/time.jpg" alt="Изображение 03" style="width: 100%; max-width: 650px; height: auto;">
+            <img src="images/emotion.jpg" alt="Изображение 04" style="width: 100%; max-width: 650px; height: auto;">
+            <p class="note"></p>
+            <form id="f"><label for="a">Ключ к записи</label><input id="a" autocomplete="off"
+                    placeholder="ВВЕДИ ОТВЕТ"><button>ПОДТВЕРДИТЬ</button>
+                <p id="m" class="error"></p>
+            </form>
+            <script>document.getElementById('f').addEventListener('submit', e => { e.preventDefault(); if (document.getElementById('a').value.trim().toUpperCase() === 'DATE') location.href = 'stage2.html'; else document.getElementById('m').textContent = 'ОТВЕТ НЕ ПРИНЯТ. ПРОВЕРЬ ПОРЯДОК.' })</script>
+            <hr class="rule">
+            <div class="small">PROTOCOL 07 · ЛОКАЛЬНАЯ КОПИЯ МАТЕРИАЛОВ</div>
+        </section>
+    </main>
+</body>
+
+</html>
